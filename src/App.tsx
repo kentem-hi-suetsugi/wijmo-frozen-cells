@@ -140,16 +140,6 @@ function App() {
         <input type="checkbox" id="checker-${r}" ${checked && "checked"}>
         ${checked ? "hogehoge" : "fugafuga"}
         </label>`;
-    } else if (
-      panel.columns[c].binding === "checker" &&
-      cell.classList.contains("wj-header")
-    ) {
-      const checked = _data.every((row) => row.checker);
-      cell.innerHTML = `
-      <label>
-      <input type="checkbox" id="checker-header" ${checked && "checked"}>
-      ${checked ? "headerHoge" : "headerFuga"}
-      </label>`;
     }
   };
   return (
@@ -171,13 +161,6 @@ function App() {
         }}
       >
         console.log
-      </button>
-      <button
-        onClick={() => {
-          setData2(_data);
-        }}
-      >
-        再レンダリング
       </button>
       <WijmoReactFlexGrid
         allowSorting="None"
